@@ -1,0 +1,44 @@
+experiment_name: mrpc_hetero_fedavg_seed_2
+output_root: results/raw
+
+model:
+  name: distilbert-base-uncased
+  freeze_backbone: true
+
+task:
+  name: mrpc
+  num_labels: 2
+
+data:
+  max_length: 128
+  num_clients: 8
+  train_subset_per_client: 150
+  eval_subset: 408
+  partition_mode: label_skew
+  dominant_label_ratio: 0.85
+
+federation:
+  num_rounds: 10
+  clients_per_round: 4
+  local_epochs: 1
+
+aggregation:
+  name: fedavg
+
+optimization:
+  lr: 5.0e-4
+  batch_size: 8
+  grad_accum_steps: 2
+  weight_decay: 0.01
+
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["q_lin", "k_lin", "v_lin"]
+
+runtime:
+  seed: 2
+  device: cuda
+  fp16: true
+  num_workers: 2

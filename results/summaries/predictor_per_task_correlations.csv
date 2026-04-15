@@ -1,0 +1,17 @@
+group_type,group,feature,target,pearson_r,n
+task,mrpc,early_cos_mean,final_acc,-0.4822882666352386,31
+task,mrpc,early_cos_mean,final_f1,-0.5372832021376229,21
+task,mrpc,early_neg_cos_frac,final_acc,0.5552232790773842,31
+task,mrpc,early_neg_cos_frac,final_f1,0.4509882052758789,21
+task,mrpc,early_align_mean,final_acc,-0.1129047021895075,31
+task,mrpc,early_align_mean,final_f1,-0.17973201504839634,21
+task,mrpc,early_cos_min,final_acc,-0.5835930804728243,31
+task,mrpc,early_cos_min,final_f1,-0.5686486840866846,21
+task,qqp,early_cos_mean,final_acc,0.9999683852952009,3
+task,qqp,early_neg_cos_frac,final_acc,-0.9999999999999997,3
+task,qqp,early_align_mean,final_acc,0.9999860234670367,3
+task,qqp,early_cos_min,final_acc,0.9999999999999999,3
+task,sst2,early_cos_mean,final_acc,0.1784781889495489,48
+task,sst2,early_neg_cos_frac,final_acc,,48
+task,sst2,early_align_mean,final_acc,0.34715352910537783,48
+task,sst2,early_cos_min,final_acc,-0.25285054156822434,48

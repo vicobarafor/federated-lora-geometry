@@ -1,0 +1,11 @@
+{
+  "dataset": "qqp",
+  "baseline_experiment": "qqp_hetero_fedavg",
+  "baseline_metrics_path": "results/raw/qqp_hetero_fedavg/2026-04-03_15-36-32/metrics.jsonl",
+  "baseline_final_eval_acc": 0.805,
+  "baseline_final_mean_cos": 0.017423132434487343,
+  "v5b_experiment": "qqp_hetero_fedgeo_v5b",
+  "v5b_metrics_path": "results/raw/qqp_hetero_fedgeo_v5b/2026-04-03_15-46-05/metrics.jsonl",
+  "v5b_final_eval_acc": 0.805,
+  "v5b_final_mean_cos": 0.018216285854578018
+}

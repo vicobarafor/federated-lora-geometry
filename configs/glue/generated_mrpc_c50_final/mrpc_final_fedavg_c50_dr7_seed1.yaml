@@ -1,0 +1,39 @@
+experiment_name: mrpc_final_fedavg_c50_dr7_seed1
+output_root: results/raw
+model:
+  name: distilbert-base-uncased
+  freeze_backbone: true
+task:
+  name: mrpc
+  num_labels: 2
+data:
+  max_length: 128
+  num_clients: 50
+  train_subset_per_client: 12
+  eval_subset: 408
+  partition_mode: label_skew
+  dominant_label_ratio: 0.7
+federation:
+  num_rounds: 10
+  clients_per_round: 25
+  local_epochs: 1
+aggregation:
+  name: fedavg
+optimization:
+  lr: 0.0005
+  batch_size: 8
+  grad_accum_steps: 2
+  weight_decay: 0.01
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+  - q_lin
+  - k_lin
+  - v_lin
+runtime:
+  seed: 1
+  device: cuda
+  fp16: true
+  num_workers: 2

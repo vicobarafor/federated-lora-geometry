@@ -1,0 +1,56 @@
+{
+  "sst2": {
+    "FedAvg": {
+      "mean": 0.8448,
+      "std": 0.0136,
+      "source": "multi-seed"
+    },
+    "FedGeo v4": {
+      "mean": 0.8463,
+      "std": 0.0066,
+      "source": "multi-seed"
+    },
+    "FedGeo v5b": {
+      "mean": 0.8486238532110092,
+      "std": 0.006752110754073299,
+      "source": "multi-seed"
+    }
+  },
+  "mrpc": {
+    "FedAvg": {
+      "mean": 0.6331699346405228,
+      "std": 0.0872845779502407,
+      "source": "multi-seed"
+    },
+    "FedGeo v4": {
+      "mean": 0.6176470588235293,
+      "std": 0.10747113498304148,
+      "source": "multi-seed"
+    },
+    "FedGeo v5": {
+      "single_run_acc": 0.7352941176470589,
+      "source": "single-run"
+    },
+    "FedGeo v5b": {
+      "single_run_acc": 0.7352941176470589,
+      "source": "single-run"
+    }
+  },
+  "qqp": {
+    "FedAvg": {
+      "single_run_acc": 0.805,
+      "source": "single-run"
+    },
+    "FedGeo v5b": {
+      "single_run_acc": 0.805,
+      "source": "single-run"
+    }
+  },
+  "headline_findings": [
+    "FedGeo v5b is the strongest geometry-aware variant tested.",
+    "On SST-2, FedGeo v5b outperformed FedAvg on multi-seed average while also showing lower variance.",
+    "On MRPC, calibrated geometry remained competitive but did not clearly outperform FedAvg.",
+    "On QQP, FedGeo v5b matched FedAvg on the current run.",
+    "Across experiments, naive or aggressive geometry weighting was unstable; clipping, shrinkage, and hybrid mixing were necessary."
+  ]
+}

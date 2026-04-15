@@ -1,0 +1,68 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =========================
+# Jupyter / Colab
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+
+# =========================
+# Virtual environments
+# =========================
+.env
+.venv/
+venv/
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+tmp/
+temp/
+
+# =========================
+# LaTeX (paper build junk)
+# =========================
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.blg
+*.bbl
+*.fdb_latexmk
+*.fls
+
+# =========================
+# EXPERIMENT DATA (IMPORTANT)
+# =========================
+
+# ❌ DO NOT TRACK heavy raw data
+results/raw/
+results/processed/
+
+# ❌ DO NOT TRACK training artifacts
+artifacts/
+
+# =========================
+# KEEP THESE (important)
+# =========================
+
+# Keep plots (paper figures)
+!results/plots/
+
+# Keep summaries (tables)
+!results/summaries/
+!results/summary/
+
+# Keep PNG figures
+!*.png

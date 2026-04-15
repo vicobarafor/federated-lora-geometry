@@ -1,0 +1,15 @@
+feature,target,pearson_r,n
+early_cos_mean,final_acc,0.4331265589835117,82
+early_align_mean,final_acc,0.3434024138284096,82
+early_cos_min,final_acc,0.2976666943702436,82
+early_align_min,final_acc,0.2769545179699619,82
+early_cos_delta,final_acc,0.025983009610886735,82
+early_align_delta,final_acc,-0.00524019048144921,82
+early_neg_cos_frac,final_acc,-0.46316125197604613,82
+early_neg_cos_frac,final_f1,0.3745117440552737,22
+early_cos_delta,final_f1,0.054829020199686405,22
+early_align_delta,final_f1,0.002967195050927859,22
+early_align_mean,final_f1,-0.1749906421522533,22
+early_align_min,final_f1,-0.23614870991723796,22
+early_cos_min,final_f1,-0.48682605799911205,22
+early_cos_mean,final_f1,-0.49553441819434635,22

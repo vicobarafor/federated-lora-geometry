@@ -1,0 +1,46 @@
+experiment_name: mrpc_control_fedgeo_v5b_dr70_seed1
+output_root: results/raw
+model:
+  name: distilbert-base-uncased
+  freeze_backbone: true
+task:
+  name: mrpc
+  num_labels: 2
+data:
+  max_length: 128
+  num_clients: 8
+  train_subset_per_client: 150
+  eval_subset: 408
+  partition_mode: label_skew
+  dominant_label_ratio: 0.7
+federation:
+  num_rounds: 10
+  clients_per_round: 4
+  local_epochs: 1
+aggregation:
+  name: fedgeo_hybrid_robust
+  alpha_align: 1.0
+  alpha_cosine: 0.5
+  alpha_norm: 0.0
+  temperature: 2.0
+  lambda_geo: 0.1
+  beta_uniform: 0.5
+  score_clip: 1.0
+optimization:
+  lr: 0.0005
+  batch_size: 8
+  grad_accum_steps: 2
+  weight_decay: 0.01
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+  - q_lin
+  - k_lin
+  - v_lin
+runtime:
+  seed: 1
+  device: cuda
+  fp16: true
+  num_workers: 2
