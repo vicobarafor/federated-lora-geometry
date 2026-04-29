@@ -1,42 +1,73 @@
 # When Federated LoRA Fails
 
-Research code for studying instability in federated LoRA under heterogeneous data distributions, introducing early-round update geometry as a predictive signal of failure and proposing FedGeoX, a geometry-aware aggregation method.
+Geometry dynamics and instability in federated parameter-efficient fine-tuning under heterogeneous data.
+
+---
 
 ## Overview
 
-This repository accompanies our study of **federated LoRA under heterogeneity**. We analyze how geometric properties of client updates evolve during training and show that **early-round geometry strongly predicts downstream performance and instability**.
+This repository studies instability in federated LoRA under heterogeneous client distributions.
 
-In particular, we study:
-- the relationship between cosine similarity, alignment, and negative update conflict
-- performance degradation under increasing label skew
-- variability across random seeds
-- scaling behavior as the number of clients increases
-- FedGeoX, a geometry-aware aggregation method for federated LoRA
+Key idea:
 
-## Main contributions
+- Early geometry determines training outcome
+- Alignment → good performance
+- Conflict → failure
 
-- A research codebase for federated LoRA under heterogeneous client data
-- Analysis showing that early-round update geometry predicts final performance
-- Controlled experiments across heterogeneity, seeds, and scaling regimes
-- FedGeoX, a geometry-aware aggregation approach
-- Scripts for summarization, plotting, and instability analysis
+---
 
-## Repository structure
+## Usage
 
-```text
-.
-├── analysis/            # Additional analysis utilities
-├── configs/             # Experiment configurations
-├── docs/                # Notes on benchmarks, methods, and roadmap
-├── notebooks/           # Colab and exploratory notebooks
-├── results/
-│   ├── plots/           # Figures used in the paper
-│   ├── summaries/       # Compact summary CSVs
-│   └── summary/         # Additional compact outputs
-├── scripts/             # Experiment runners and analysis scripts
-├── src/                 # Core source code
-├── tests/               # Tests
-├── LICENSE
-├── pyproject.toml
-├── requirements.txt
-└── README.md
+Run:
+
+python scripts/run_experiment.py --config configs/glue/<config>.yaml
+
+---
+
+## Results
+
+### Main Comparison
+
+![MRPC](results/plots/mrpc_comparison.png)
+![SST2](results/plots/sst2_comparison.png)
+![QQP](results/plots/qqp_comparison.png)
+
+---
+
+### Geometry Predicts Performance
+
+![Alignment](results/plots/figure1_alignment_delta_vs_final_accuracy.png)
+![Conflict](results/plots/figure2_max_conflict_vs_final_accuracy.png)
+![Cosine](results/plots/figure5_cosine_delta_vs_final_accuracy.png)
+
+---
+
+## Performance Summary
+
+| Task | Method | Accuracy |
+|------|--------|----------|
+| SST-2 | FedAvg | 0.8448 |
+| SST-2 | FedGeo v5b | 0.8486 |
+| MRPC | FedAvg | 0.6332 |
+| MRPC | FedGeo v5b | 0.7353 |
+
+---
+
+## Reproducibility
+
+1. Use configs in configs/
+2. Fix seeds
+3. Run multiple seeds
+
+---
+
+## Limitations
+
+- High heterogeneity remains unstable
+- Scaling increases variance
+
+---
+
+## Status
+
+Active research codebase.
