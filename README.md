@@ -14,7 +14,7 @@
 
 This repository studies instability in federated LoRA under heterogeneous client distributions.
 
-We analyze how the geometry of client updates — including cosine similarity, alignment, and conflict — evolves during training, and how these signals relate to final performance.
+We analyze how the geometry of client updates, including cosine similarity, alignment, and conflict, evolves during training, and how these signals relate to final performance.
 
 <p align="center"><b>Training outcomes are largely determined by early-round geometry.</b></p>
 
